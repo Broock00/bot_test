@@ -2,8 +2,7 @@ from typing import Final
 from telegram import Update
 from telegram.ext import Application, CommandHandler, MessageHandler, filters, ContextTypes
 
-
-TOKEN: Final = '8163102789:AAHf3zMpQmx9T2BPz-CX8_atQlvTZfiUz2o'
+TOKEN: Final = os.getenv("TELEGRAM_BOT_TOKEN")
 BOT_USERNAME: Final = '@xlounge_bot'
 
 # commands
