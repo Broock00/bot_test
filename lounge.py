@@ -6,11 +6,6 @@ from telegram.ext import Application, CommandHandler, MessageHandler, filters, C
 TOKEN: Final = os.getenv("TELEGRAM_BOT_TOKEN")
 BOT_USERNAME: Final = '@xlounge_bot'
 
-if TOKEN is None:
-    print("TOKEN is not set!")
-else:
-    print("Token is successfully loaded!")
-
 # commands
 async def start_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
     await update.message.reply_text('Hello wellcome to the x lounge service, im ur assistant...')
@@ -67,6 +62,10 @@ async def error(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
 if __name__ == '__main__':
     print('Starting bot...')
+    if TOKEN is None:
+        print("TOKEN is not set!")
+    else:
+        print("Token is successfully loaded!")
     app = Application.builder().token(TOKEN).build()
 
     app.add_handler(CommandHandler('start', start_command))
